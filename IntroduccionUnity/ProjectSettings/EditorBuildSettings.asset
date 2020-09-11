@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/EjemploStackTorreHanoi.unity
+    guid: 1d448837450827e409dcc7f065dc52af
   m_configObjects: {}

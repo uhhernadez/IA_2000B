@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\EjemploMov.cs" />
     <Compile Include="Assets\Scripts\EjemploRigibody.cs" />
+    <Compile Include="Assets\Scripts\Tester.cs" />
     <Compile Include="Assets\Scripts\TorreHanoi.cs" />
     <Compile Include="Assets\Scripts\Trash.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
