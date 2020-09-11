@@ -1,10 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Entorno: Las Torres de Hanói
 public class TorreHanoi : MonoBehaviour
 {
     public GameObject [] piezas;
+
+    public GameObject posicionTorre1;
+    public GameObject posicionTorre2;
+    public GameObject posicionTorre3;
 
     private Stack<GameObject> torre1 = new Stack<GameObject>();
     private Stack<GameObject> torre2 = new Stack<GameObject>();
@@ -19,16 +24,7 @@ public class TorreHanoi : MonoBehaviour
             { 
                torre3.Push(d);
             }
-
-            // Ciclo For
-            /*
-            for(int k = 0; k < piezas.Length; k++) 
-            { 
-                torre3.Push(piezas[k]);
-            }
-            */
        }
-       Debug.LogWarning("La torre 3 tiene: " +torre3.Count);
     }
 
     void Update()
@@ -38,18 +34,49 @@ public class TorreHanoi : MonoBehaviour
     // a <- Torre de donde vamos a tomar la pieza
     // b <- Torre a donde vamos a mover la pieza 
     public bool MoverPieza(int a, int b) 
-    { 
-        if(a < 1 && a > 3) 
+    {
+        if (a == b) 
         { 
+            Debug.LogWarning("La pieza ya está en su lugar");
+            return false;
+        } 
+
+        if(a < 1 || a > 3) 
+        {
+            Debug.LogWarning("El valor de 'a' está fuera del rango");
             return false;
         }
 
-        if(b < 1 && b > 3)
+        if(b < 1 || b > 3)
         { 
+            Debug.LogWarning("El valor de 'b' está fuera del rango");
             return false;
         }
 
-        //TrasladarPieza(,);
+        Stack<GameObject> torreA = ObtenerTorre(a);
+
+        if(torreA.Count == 0) { 
+            Debug.LogWarning("La torre 'A' no tiene piezas"); 
+            return false;
+        }
+
+        Stack<GameObject> torreB = ObtenerTorre(b);
+        
+        if(torreB.Count != 0) 
+        { 
+            int piezaIndiceA = Convert.ToInt32(torreA.Peek().name);
+            int piezaIndiceB = Convert.ToInt32(torreB.Peek().name);
+
+            if(piezaIndiceA > piezaIndiceB) 
+            { 
+                Debug.LogWarning("La pieza A es más grande que la pieza B");
+                return false;
+            }
+            return false;
+        }
+        Vector3 posicionTorre = ObtenerPosicionTorre(b);
+        
+        TrasladarPieza(torreA,torreB,posicionTorre);
 
         return true;
     }
@@ -63,8 +90,28 @@ public class TorreHanoi : MonoBehaviour
             case 3: torre = torre3; break;
             default: torre = torre1; break;
         } 
-
         return torre;
+    }
+
+    private Vector3 ObtenerPosicionTorre(int a) 
+    { 
+        Vector3 posicionTorre;
+        
+        switch(a)
+        { 
+            case 1: posicionTorre = posicionTorre1.transform.position; break; 
+            case 2: posicionTorre = posicionTorre2.transform.position; break; 
+            case 3: posicionTorre = posicionTorre3.transform.position; break; 
+            default: posicionTorre = posicionTorre1.transform.position; break;  
+        }
+        
+        return posicionTorre;
+    }
+
+    void TrasladarPieza(Stack<GameObject> ta, Stack<GameObject> tb, Vector3 pf) 
+    { 
+        tb.Push(ta.Pop());
+        tb.Peek().transform.position = pf;
     }
 
 }

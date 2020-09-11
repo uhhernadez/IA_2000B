@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\EjemploMov.cs" />
     <Compile Include="Assets\Scripts\EjemploRigibody.cs" />
     <Compile Include="Assets\Scripts\TorreHanoi.cs" />
+    <Compile Include="Assets\Scripts\TorreHanoiAgente.cs" />
     <Compile Include="Assets\Scripts\Trash.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>F:/src/IA_2000B/IntroduccionUnity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
