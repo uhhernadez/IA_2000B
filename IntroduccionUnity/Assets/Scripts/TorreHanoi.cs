@@ -72,7 +72,6 @@ public class TorreHanoi : MonoBehaviour
                 Debug.LogWarning("La pieza A es más grande que la pieza B");
                 return false;
             }
-            return false;
         }
         Vector3 posicionTorre = ObtenerPosicionTorre(b);
         
@@ -114,4 +113,41 @@ public class TorreHanoi : MonoBehaviour
         tb.Peek().transform.position = pf;
     }
 
+    public int [] ObtenerEstadoTorres() { 
+        int [] retval; 
+        retval = new int[3];
+        if(torre1.Count > 0)
+        { 
+            retval[0] = Convert.ToInt32(torre1.Peek().name);
+        } 
+        else 
+        { 
+            retval[0] = 100;
+        }
+        
+        if(torre2.Count > 0)
+        { 
+            retval[1] = Convert.ToInt32(torre2.Peek().name);
+        }
+        else 
+        { 
+            retval[1] = 100;
+        }
+
+        if(torre3.Count > 0)
+        { 
+            retval[2] = Convert.ToInt32(torre3.Peek().name);
+        }
+        else 
+        { 
+            retval[2] = 100;
+        }
+        
+        return retval;
+    }
+
+    public bool ConfiguracionFinal() 
+    { 
+        return torre1.Count == 7 || torre2.Count == 7;
+    }
 }
