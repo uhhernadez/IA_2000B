@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 // Entorno: Las Torres de Hanói
 public class TorreHanoi : MonoBehaviour
@@ -72,7 +73,6 @@ public class TorreHanoi : MonoBehaviour
                 Debug.LogWarning("La pieza A es más grande que la pieza B");
                 return false;
             }
-            return false;
         }
         Vector3 posicionTorre = ObtenerPosicionTorre(b);
         
@@ -114,4 +114,38 @@ public class TorreHanoi : MonoBehaviour
         tb.Peek().transform.position = pf;
     }
 
+    public int [] ObtenerConfiguracionTorres() 
+    { 
+        int [] torres = new int[3];
+        // Peek nos da el valor de la pieza que está hasta arriba de nuestra
+        if(torre1.Count != 0) 
+        { 
+            torres[0] = Convert.ToInt32(torre1.Peek().name);
+        } 
+        else 
+        { 
+            torres[0] = -1; 
+        }
+       
+        // torres[0] = (torre1.Count != 0 )? Convert.ToInt32(torre3.Peek().name) : -1;
+       
+        if(torre2.Count != 0) 
+        { 
+            torres[1] = Convert.ToInt32(torre2.Peek().name);
+        }
+        else
+        { 
+            torres[1] = -1;
+        }
+
+        if (torre3.Count != 0) 
+        { 
+            torres[2] = Convert.ToInt32(torre3.Peek().name);
+        }
+        else 
+        { 
+            torres[2] = -1; 
+        }
+        return torres;
+    }
 }
