@@ -1,0 +1,13 @@
+F:\src\IA_2000B\GatoLib\bin\Debug\netcoreapp3.1\GatoLib.exe
+F:\src\IA_2000B\GatoLib\bin\Debug\netcoreapp3.1\GatoLib.deps.json
+F:\src\IA_2000B\GatoLib\bin\Debug\netcoreapp3.1\GatoLib.runtimeconfig.json
+F:\src\IA_2000B\GatoLib\bin\Debug\netcoreapp3.1\GatoLib.runtimeconfig.dev.json
+F:\src\IA_2000B\GatoLib\bin\Debug\netcoreapp3.1\GatoLib.dll
+F:\src\IA_2000B\GatoLib\bin\Debug\netcoreapp3.1\GatoLib.pdb
+F:\src\IA_2000B\GatoLib\obj\Debug\netcoreapp3.1\GatoLib.csprojAssemblyReference.cache
+F:\src\IA_2000B\GatoLib\obj\Debug\netcoreapp3.1\GatoLib.AssemblyInfoInputs.cache
+F:\src\IA_2000B\GatoLib\obj\Debug\netcoreapp3.1\GatoLib.AssemblyInfo.cs
+F:\src\IA_2000B\GatoLib\obj\Debug\netcoreapp3.1\GatoLib.csproj.CoreCompileInputs.cache
+F:\src\IA_2000B\GatoLib\obj\Debug\netcoreapp3.1\GatoLib.dll
+F:\src\IA_2000B\GatoLib\obj\Debug\netcoreapp3.1\GatoLib.pdb
+F:\src\IA_2000B\GatoLib\obj\Debug\netcoreapp3.1\GatoLib.genruntimeconfig.cache
