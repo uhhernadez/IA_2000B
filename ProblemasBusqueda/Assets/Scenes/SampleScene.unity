@@ -1298,8 +1298,8 @@ MonoBehaviour:
   - {fileID: 1914019906}
   - {fileID: 1167772850}
   - {fileID: 1390675223}
-  piezaX: {fileID: 919132149155446097, guid: 5a18b38b00528bb4bbebc8780865415f, type: 3}
-  piezaO: {fileID: 919132149155446097, guid: c24735604d106564d80c53a45b7efdfc, type: 3}
+  piezaX: {fileID: 9068823810182307102, guid: 8e29a62c2caeaff4b9ae3da85826ebb7, type: 3}
+  piezaO: {fileID: 2092254303316898300, guid: ba93f6a8b59ca6b42a05fd301d46bdff, type: 3}
 --- !u!1 &1233050034
 GameObject:
   m_ObjectHideFlags: 0
