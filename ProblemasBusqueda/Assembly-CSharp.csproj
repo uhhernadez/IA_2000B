@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\SeachMethods.cs" />
     <Compile Include="Assets\Scripts\TicTacToeAccion.cs" />
     <Compile Include="Assets\Scripts\TicTacToeTablero.cs" />
     <Compile Include="Assets\Scripts\TicTacToeTree.cs" />

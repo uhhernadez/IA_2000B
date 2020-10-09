@@ -62,10 +62,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c24735604d106564d80c53a45b7efdfc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c24735604d106564d80c53a45b7efdfc,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c24735604d106564d80c53a45b7efdfc,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c24735604d106564d80c53a45b7efdfc,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c24735604d106564d80c53a45b7efdfc,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c24735604d106564d80c53a45b7efdfc,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c24735604d106564d80c53a45b7efdfc,
         type: 3}
       propertyPath: m_Name
-      value: TicTacToeCircle Variant
+      value: markO
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c24735604d106564d80c53a45b7efdfc,
         type: 3}

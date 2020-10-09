@@ -4,7 +4,7 @@ using UnityEngine;
 public class TicTacToeTablero : MonoBehaviour
 {
     public GameObject padre;
-    public List<GameObject> hijos = new List<GameObject>();
+    public List<GameObject> hijos;
     public List<int> costo = new List<int>();
     // Arreglo para almacenar las piezas de los jugadores.
     public GameObject [] piezas = new GameObject[9];
@@ -16,17 +16,6 @@ public class TicTacToeTablero : MonoBehaviour
     public GameObject piezaO;
 
     public int turno;
-    //public int Turno
-    //{ 
-    //    get{ return turno;}
-    //}
-   
-    public TicTacToeTablero(TicTacToeTablero t) 
-    { 
-        Debug.Log("Instantiation");
-        padre = t.padre;
-        hijos = new List<GameObject>();
-    }
     public bool bloquear = false;
 
     public bool Mover(int posicion)
@@ -51,7 +40,6 @@ public class TicTacToeTablero : MonoBehaviour
             piezas[posicion] = Instantiate(piezaO);
             tag = "O";
         }
-        Debug.Log(turno); 
         piezas[posicion].transform.position = posiciones[posicion].transform.position;
         piezas[posicion].transform.parent = this.transform;
         turno++;
