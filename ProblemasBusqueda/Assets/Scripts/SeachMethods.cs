@@ -18,17 +18,41 @@ public class SeachMethods : MonoBehaviour
         {
             camara.transform.position = arbol.arbol[0].transform.position + Vector3.up;
             BusquedaEnProfundidad();
+            BusquedaEnAnchura();
         }
         ultima_evaluacion = Time.realtimeSinceStartup;
     }
 
     void Update()
     {
+        //AnimacionProfundidad();
+        AnimacionAnchura();
+    }
+
+    void AnimacionProfundidad()
+    { 
         if (pos < profundidad.Count)
         {
             float t = (Time.realtimeSinceStartup - ultima_evaluacion) / traslado;
 
             Vector3 nuevaPosicion = Vector3.Lerp(camara.transform.position, profundidad[pos], t);
+            camara.transform.position = nuevaPosicion + 2*Vector3.up;
+            if (t >= 1.0f)
+            {
+                pos++;
+                ultima_evaluacion = Time.realtimeSinceStartup;
+            }
+        }
+    
+    }
+
+    void AnimacionAnchura()
+    { 
+        if (pos < anchura.Count)
+        {
+            float t = (Time.realtimeSinceStartup - ultima_evaluacion) / traslado;
+
+            Vector3 nuevaPosicion = Vector3.Lerp(camara.transform.position, anchura[pos], t);
             camara.transform.position = nuevaPosicion + Vector3.up;
             if (t >= 1.0f)
             {
@@ -36,7 +60,9 @@ public class SeachMethods : MonoBehaviour
                 ultima_evaluacion = Time.realtimeSinceStartup;
             }
         }
+    
     }
+
 
     void BusquedaEnProfundidad()
     {
@@ -54,15 +80,15 @@ public class SeachMethods : MonoBehaviour
     }
     void BusquedaEnAnchura()
     {
-        Stack<GameObject> pila = new Stack<GameObject>();
-        pila.Push(arbol.arbol[0]);
+        Queue<GameObject> pila = new Queue<GameObject>();
+        pila.Enqueue(arbol.arbol[0]);
         while (pila.Count != 0)
         {
-            GameObject actual = pila.Pop();
-            profundidad.Add(actual.transform.position);
+            GameObject actual = pila.Dequeue();
+            anchura.Add(actual.transform.position);
             for (int k = 0; k < actual.GetComponent<TicTacToeTablero>().hijos.Count; k++)
             {
-                pila.Push(actual.GetComponent<TicTacToeTablero>().hijos[k]);
+                pila.Enqueue(actual.GetComponent<TicTacToeTablero>().hijos[k]);
             }
         }
     }
