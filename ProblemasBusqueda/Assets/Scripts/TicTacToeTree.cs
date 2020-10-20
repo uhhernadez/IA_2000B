@@ -8,10 +8,11 @@ public class TicTacToeTree : MonoBehaviour
     public GameObject nodo;
     public GameObject raiz;
     public List<GameObject> arbol = new List<GameObject>();
-    private Vector3 deltaz = new Vector3(0, 0, 1);
+    private Vector3 deltaz = new Vector3(0, 0, 2);
     private Vector3 deltax = new Vector3(4, 0, 0);
     bool once = true;
     public Material materialLinea;
+    public int profundidad = 6;
     void Awake()
     {
         if (once)
@@ -19,14 +20,11 @@ public class TicTacToeTree : MonoBehaviour
             int turno = 0;
             raiz = Instantiate(nodo);
             arbol.Add(raiz);
-            CrearArbolProfundidad(ref raiz, ref turno, 4);
-            OrganizaArbol();
-            //once = false;
+            CrearArbolProfundidad(ref raiz, ref turno, profundidad);
+            //OrganizaArbol();
+            OrganizaArbolNiveles();
+            Debug.Log(arbol.Count);
         }
-    }
-
-    void Update()
-    {
     }
 
     void CrearArbolProfundidad(ref GameObject nodo, ref int turno, int profundidad)
@@ -50,13 +48,14 @@ public class TicTacToeTree : MonoBehaviour
             GameObject siguiente = Instantiate<GameObject>(nodo);
             siguiente.GetComponent<TicTacToeTablero>().hijos = new List<GameObject>();
             siguiente.GetComponent<TicTacToeTablero>().Mover(movs[k]);
-            siguiente.SetActive(true);
+            //siguiente.SetActive(false);
             turno++;
             CrearArbolProfundidad(ref siguiente, ref turno, profundidad);
             turno--;
 
             siguiente.GetComponent<TicTacToeTablero>().padre = nodo;
             nodo.GetComponent<TicTacToeTablero>().hijos.Add(siguiente);
+            siguiente.name = "Board"+arbol.Count;
             arbol.Add(siguiente);
         }
 
@@ -112,8 +111,41 @@ public class TicTacToeTree : MonoBehaviour
         }
 
     }
-    // To show the lines in the game window whne it is running
+   
+    void OrganizaArbolNiveles()
+    {
+        int max = 0;
+        int min = 10;
+        for (int k = 0; k < arbol.Count; k++)
+        {
+            if (max < arbol[k].GetComponent<TicTacToeTablero>().turno)
+            {
+                max = arbol[k].GetComponent<TicTacToeTablero>().turno;
+            }
+            
+            if (min > arbol[k].GetComponent<TicTacToeTablero>().turno)
+            {
+                min = arbol[k].GetComponent<TicTacToeTablero>().turno;
+            }
+        }
+
+        for (int j = min; j <=max; j++)
+        {
+            int count = 0;
+
+            for (int k = 0; k < arbol.Count; k++)
+            {
+                if (arbol[k].GetComponent<TicTacToeTablero>().turno == j)
+                {
+                    arbol[k].transform.position = j * deltax + count * deltaz;
+                    count++;
+                }
+            }
+        }
+
+    }
     
+
     void DibujarConexiones()
     {
         int max = 0;
@@ -134,21 +166,30 @@ public class TicTacToeTree : MonoBehaviour
                     if (arbol[i].GetComponent<TicTacToeTablero>().hijos == null ||
                        arbol[i].GetComponent<TicTacToeTablero>().hijos.Count == 0)
                     {
-                        Debug.Log("Hijos es igual a null, turno" + k);
                         continue;
                     }
                     List<GameObject> hijos = arbol[i].GetComponent<TicTacToeTablero>().hijos;
-                    Vector3 inicial = arbol[i].transform.position;
-                    for (int j = 0; j < hijos.Count; j++)
-                    {
-                        Vector3 final = hijos[j].transform.position;
-                        GL.Begin(GL.LINES);
-                        materialLinea.SetPass(0);
-                        //GL.Color(Color.red);
-                        GL.Vertex3(inicial.x, inicial.y, inicial.z);
-                        GL.Vertex3(final.x, final.y, final.z);
-                        GL.End();
+                    if(hijos == null)
+                    { 
+                        continue;
                     }
+                    Vector3 inicial = arbol[i].transform.position;
+                    { 
+                        for (int j = 0; j < hijos.Count; j++)
+                        {
+                            if(hijos[j] == null)
+                            { 
+                                continue; 
+                            }
+                            Vector3 final = hijos[j].transform.position;
+                            GL.Begin(GL.LINES);
+                            materialLinea.SetPass(0);
+                            //GL.Color(Color.red);
+                            GL.Vertex3(inicial.x, inicial.y, inicial.z);
+                            GL.Vertex3(final.x, final.y, final.z);
+                            GL.End();
+                        }
+                    } 
                 }
             }
         }

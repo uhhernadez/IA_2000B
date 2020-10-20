@@ -1,11 +1,17 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class TicTacToeTablero : MonoBehaviour
 {
+    // Variable para guardar cual es el nodo padre
     public GameObject padre;
+
+    // Variable para guardar los nodos hijos
     public List<GameObject> hijos;
-    public List<int> costo = new List<int>();
+
+    // Costo de moverme a cierto hijo
+    public List<int> costos = new List<int>();
     // Arreglo para almacenar las piezas de los jugadores.
     public GameObject [] piezas = new GameObject[9];
 
@@ -17,6 +23,10 @@ public class TicTacToeTablero : MonoBehaviour
 
     public int turno;
     public bool bloquear = false;
+    public float costo = 0.0f;
+
+    public SpotLight iluminacion;
+
 
     public bool Mover(int posicion)
     {
@@ -50,7 +60,8 @@ public class TicTacToeTablero : MonoBehaviour
     public bool TerminoJuego()
     { 
         if(TresEnLinea("O"))
-        { 
+        {
+            Debug.Log("Tres en línea O");
             return true;
         }
 
@@ -69,6 +80,33 @@ public class TicTacToeTablero : MonoBehaviour
 
         return true;
     }
+
+
+    public bool Empate()
+    { 
+
+        for(int k = 0; k < piezas.Length; k++) 
+        { 
+            if(piezas[k] == null)
+            { 
+                return false; 
+            }
+        }
+        
+        if(TresEnLinea("O"))
+        {
+            Debug.Log("Tres en línea O");
+            return false;
+        }
+
+        if(TresEnLinea("X"))
+        { 
+            return false;
+        }
+
+        return true;
+    }
+
 
     public bool TresEnLinea(string marca) { 
        
