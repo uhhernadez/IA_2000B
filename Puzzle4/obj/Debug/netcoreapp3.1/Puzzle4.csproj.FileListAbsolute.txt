@@ -1,0 +1,13 @@
+F:\src\IA_2000B\Puzzle4\bin\Debug\netcoreapp3.1\Puzzle4.exe
+F:\src\IA_2000B\Puzzle4\bin\Debug\netcoreapp3.1\Puzzle4.deps.json
+F:\src\IA_2000B\Puzzle4\bin\Debug\netcoreapp3.1\Puzzle4.runtimeconfig.json
+F:\src\IA_2000B\Puzzle4\bin\Debug\netcoreapp3.1\Puzzle4.runtimeconfig.dev.json
+F:\src\IA_2000B\Puzzle4\bin\Debug\netcoreapp3.1\Puzzle4.dll
+F:\src\IA_2000B\Puzzle4\bin\Debug\netcoreapp3.1\Puzzle4.pdb
+F:\src\IA_2000B\Puzzle4\obj\Debug\netcoreapp3.1\Puzzle4.csprojAssemblyReference.cache
+F:\src\IA_2000B\Puzzle4\obj\Debug\netcoreapp3.1\Puzzle4.AssemblyInfoInputs.cache
+F:\src\IA_2000B\Puzzle4\obj\Debug\netcoreapp3.1\Puzzle4.AssemblyInfo.cs
+F:\src\IA_2000B\Puzzle4\obj\Debug\netcoreapp3.1\Puzzle4.csproj.CoreCompileInputs.cache
+F:\src\IA_2000B\Puzzle4\obj\Debug\netcoreapp3.1\Puzzle4.dll
+F:\src\IA_2000B\Puzzle4\obj\Debug\netcoreapp3.1\Puzzle4.pdb
+F:\src\IA_2000B\Puzzle4\obj\Debug\netcoreapp3.1\Puzzle4.genruntimeconfig.cache
