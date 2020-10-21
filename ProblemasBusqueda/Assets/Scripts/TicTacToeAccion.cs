@@ -10,6 +10,5 @@ public class TicTacToeAccion : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData pointerEventData)
     {
         tablero.Mover(posicion);
-        Debug.Log("Click en la posición: " + posicion);
     }
 }
