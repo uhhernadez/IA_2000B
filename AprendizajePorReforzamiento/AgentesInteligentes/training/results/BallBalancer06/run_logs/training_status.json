@@ -1,0 +1,29 @@
+{
+    "BallAgentBehavior": {
+        "checkpoints": [
+            {
+                "steps": 499989,
+                "file_path": "results\\BallBalancer06\\BallAgentBehavior\\BallAgentBehavior-499989.nn",
+                "reward": 930.1000828742981,
+                "creation_time": 1606513355.3352606
+            },
+            {
+                "steps": 500373,
+                "file_path": "results\\BallBalancer06\\BallAgentBehavior\\BallAgentBehavior-500373.nn",
+                "reward": 930.1000828742981,
+                "creation_time": 1606513356.8143954
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500373,
+            "file_path": "results\\BallBalancer06\\BallAgentBehavior.nn",
+            "reward": 930.1000828742981,
+            "creation_time": 1606513356.8143954
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.1.0",
+        "mlagents_version": "0.19.0",
+        "tensorflow_version": "2.3.1"
+    }
+}

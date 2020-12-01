@@ -20,14 +20,31 @@ public class AgentBallBalancer : Agent
         sensor.AddObservation(gameObject.transform.rotation.x); 
         sensor.AddObservation(gameObject.transform.rotation.z);
         // Posición y velocidad de la esfera
-        sensor.AddObservation(ball.transform.position);
+        //sensor.AddObservation(ball.transform.position);
+        sensor.AddObservation(ball.transform.position - gameObject.transform.position);
         sensor.AddObservation(rigidBall.velocity);
     }
 
     public override void OnActionReceived(float[] vectorAction)
-    { 
-        gameObject.transform.rotation = Quaternion.Euler(45*vectorAction[0], 0, 45*vectorAction[1]);
-        
+    //public override void OnActionReceived(ActionBuffers actionBuffers)
+    {
+        //gameObject.transform.rotation = Quaternion.Euler(30*vectorAction[0], 0, 30*vectorAction[1]);
+
+        var actionZ = 2f * Mathf.Clamp(vectorAction[0], -1f, 1f);
+        var actionX = 2f * Mathf.Clamp(vectorAction[1], -1f, 1f);
+
+        if ((gameObject.transform.rotation.z < 0.25f && actionZ > 0f) ||
+            (gameObject.transform.rotation.z > -0.25f && actionZ < 0f))
+        {
+            gameObject.transform.Rotate(new Vector3(0, 0, 1), actionZ);
+        }
+
+        if ((gameObject.transform.rotation.x < 0.25f && actionX > 0f) ||
+            (gameObject.transform.rotation.x > -0.25f && actionX < 0f))
+        {
+            gameObject.transform.Rotate(new Vector3(1, 0, 0), actionX);
+        }
+
         // Politica 
         if ((ball.transform.position.y - gameObject.transform.position.y) < -2f ||
             Mathf.Abs(ball.transform.position.x - gameObject.transform.position.x) > 3f ||
