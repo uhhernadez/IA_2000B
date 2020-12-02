@@ -1,0 +1,4 @@
+model_checkpoint_path: "PenguinLearning-1000192.ckpt"
+all_model_checkpoint_paths: "PenguinLearning-499968.ckpt"
+all_model_checkpoint_paths: "PenguinLearning-999936.ckpt"
+all_model_checkpoint_paths: "PenguinLearning-1000192.ckpt"

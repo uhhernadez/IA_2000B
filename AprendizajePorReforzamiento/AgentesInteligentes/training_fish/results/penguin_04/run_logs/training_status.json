@@ -1,0 +1,29 @@
+{
+    "PenguinLearning": {
+        "checkpoints": [
+            {
+                "steps": 499968,
+                "file_path": "results\\penguin_04\\PenguinLearning\\PenguinLearning-499968.nn",
+                "reward": -0.12499994691461325,
+                "creation_time": 1606876195.9817126
+            },
+            {
+                "steps": 500096,
+                "file_path": "results\\penguin_04\\PenguinLearning\\PenguinLearning-500096.nn",
+                "reward": -0.12499994691461325,
+                "creation_time": 1606876197.8319056
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500096,
+            "file_path": "results\\penguin_04\\PenguinLearning.nn",
+            "reward": -0.12499994691461325,
+            "creation_time": 1606876197.8319056
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.1.0",
+        "mlagents_version": "0.19.0",
+        "tensorflow_version": "2.3.1"
+    }
+}
