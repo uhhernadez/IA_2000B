@@ -1,0 +1,29 @@
+{
+    "SimpleGoal": {
+        "checkpoints": [
+            {
+                "steps": 499979,
+                "file_path": "results\\simple06\\SimpleGoal\\SimpleGoal-499979.nn",
+                "reward": 0.03676921759660427,
+                "creation_time": 1607380659.7589214
+            },
+            {
+                "steps": 500015,
+                "file_path": "results\\simple06\\SimpleGoal\\SimpleGoal-500015.nn",
+                "reward": 0.030191069385807984,
+                "creation_time": 1607380661.6596236
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500015,
+            "file_path": "results\\simple06\\SimpleGoal.nn",
+            "reward": 0.030191069385807984,
+            "creation_time": 1607380661.6596236
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.1.0",
+        "mlagents_version": "0.19.0",
+        "tensorflow_version": "2.3.1"
+    }
+}

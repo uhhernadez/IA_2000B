@@ -1,0 +1,23 @@
+{
+    "SimpleGoal": {
+        "checkpoints": [
+            {
+                "steps": 257662,
+                "file_path": "results\\simple02\\SimpleGoal\\SimpleGoal-257662.nn",
+                "reward": -1.0026764231968701,
+                "creation_time": 1607114607.430561
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 257662,
+            "file_path": "results\\simple02\\SimpleGoal.nn",
+            "reward": -1.0026764231968701,
+            "creation_time": 1607114607.430561
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.1.0",
+        "mlagents_version": "0.19.0",
+        "tensorflow_version": "2.3.1"
+    }
+}

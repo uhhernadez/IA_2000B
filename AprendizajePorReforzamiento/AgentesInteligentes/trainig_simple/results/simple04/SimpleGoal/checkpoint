@@ -1,0 +1,2 @@
+model_checkpoint_path: "SimpleGoal-147890.ckpt"
+all_model_checkpoint_paths: "SimpleGoal-147890.ckpt"
